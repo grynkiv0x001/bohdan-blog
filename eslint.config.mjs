@@ -5,12 +5,7 @@ import nextTs from 'eslint-config-next/typescript';
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-  ]),
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
   {
     rules: {
       quotes: ['error', 'single'],
@@ -20,6 +15,12 @@ const eslintConfig = defineConfig([
       'object-curly-spacing': ['error', 'always'],
       indent: ['error', 2],
       'eol-last': ['error', 'always'],
+      'react/jsx-tag-spacing': [
+        'error',
+        {
+          beforeSelfClosing: 'always',
+        },
+      ],
     },
   },
 ]);

@@ -1,8 +1,7 @@
-import client from '@/lib/mongodb';
+import { getDatabase } from '@/lib/mongodb';
 
 const Page = async () => {
-  const mongoClient = await client.connect();
-  const db = mongoClient.db('blog');
+  const db = await getDatabase();
 
   const users = await db
     .collection('users')
